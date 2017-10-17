@@ -83,6 +83,7 @@ Client::~Client()
 	stopWorking();
 	terminate();
 	m_tqReady = {}; // m_tqReady holds a closure that uses m_signalled.
+	m_bqReady = {}; // m_bqReady holds a closure that uses m_signalled.
 }
 
 void Client::init(p2p::Host* _extNet, fs::path const& _dbPath, WithExisting _forceAction, u256 _networkId)
