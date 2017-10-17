@@ -311,7 +311,7 @@ private:
 
 	bi::tcp::endpoint m_tcpPublic;											///< Our public listening endpoint.
 	KeyPair m_alias;															///< Alias for network communication. Network address is k*G. k is key material. TODO: Replace KeyPair.
-	std::shared_ptr<NodeTable> m_nodeTable;									///< Node table (uses kademlia-like discovery).
+	mutable std::shared_ptr<NodeTable> m_nodeTable;									///< Node table (uses kademlia-like discovery).
 
 	/// Shared storage of Peer objects. Peers are created or destroyed on demand by the Host. Active sessions maintain a shared_ptr to a Peer;
 	std::unordered_map<NodeID, std::shared_ptr<Peer>> m_peers;
